@@ -1,3 +1,5 @@
+SET NAMES utf8mb4;
+SET CHARACTER SET utf8mb4;
 SET SQL_SAFE_UPDATES = 0;
 
 DELETE FROM booking_seats;
@@ -30,6 +32,8 @@ INSERT INTO movies (title, description, Duration, trailer_duration_minutes, post
 ('Dune: Part Two', 'Hành trình...', 166, 10, 'https://image.tmdb.org/t/p/w500/1pdfLvkbY9ohJlCjQH2CZjjYVvJ.jpg', 'https://image.tmdb.org/t/p/original/xOMo8BRK7PfcJv9JCnx7s5hj0PX.jpg', 'Hành động, Viễn tưởng', '2024-03-01', 'Denis Villeneuve', 'Timothée Chalamet', 'T13', 8.5, 'showing'),
 ('Kung Fu Panda 4', 'Gấu Po...', 94, 10, 'https://image.tmdb.org/t/p/w500/kDp1vUBnMpe8ak4rjgl3cLELqjU.jpg', 'https://image.tmdb.org/t/p/original/nLBRD7UPR6GjmWQp6ASAfCTaWKX.jpg', 'Hoạt hình, Hài hước', '2024-03-08', 'Mike Mitchell', 'Jack Black, Awkwafina', 'P', 7.2, 'showing'),
 ('Godzilla x Kong: The New Empire', 'Hai quái thú...', 115, 10, 'https://image.tmdb.org/t/p/w500/z1p34vh7dEOnLDmyCrlUVLuoDzd.jpg', 'https://image.tmdb.org/t/p/original/fsSGGBMia81KAFuukQ4JOMIWYAQ.jpg', 'Hành động, Viễn tưởng', '2024-03-29', 'Adam Wingard', 'Rebecca Hall', 'T13', 6.8, 'coming');
+
+UPDATE movies SET is_deleted = 0 WHERE is_deleted IS NULL;
 
 INSERT INTO rooms (name, total_seats, status) VALUES
 ('Phòng 1 (2D Standard)', 25, 'active'),
